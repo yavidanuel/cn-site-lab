@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日常中的延伸阅读 · 关于开云</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans SC', sans-serif;
+            background: #f5f3ef;
+            color: #1e1e1e;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .hero {
+            background: linear-gradient(145deg, #1b2a32 0%, #0f1a20 100%);
+            color: #e8e3da;
+            padding: 6rem 2rem 5rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #b59b7e, #d9c6a8, #b59b7e);
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 400;
+            letter-spacing: 0.04em;
+            margin-bottom: 1rem;
+            color: #f0ece6;
+        }
+
+        .hero .subhead {
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: #c0b7a9;
+            max-width: 560px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 3rem 2rem 4rem;
+        }
+
+        .article-meta {
+            font-size: 0.85rem;
+            color: #8c8275;
+            margin-bottom: 2.5rem;
+            border-bottom: 1px solid #ded7cd;
+            padding-bottom: 1.2rem;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .article-meta span {
+            display: inline-block;
+        }
+
+        .article-meta .tag {
+            background: #e4ddd2;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: #3f3a33;
+        }
+
+        .content p {
+            margin-bottom: 1.8rem;
+            text-indent: 2em;
+        }
+
+        .content p:first-of-type {
+            text-indent: 0;
+        }
+
+        .content p:first-of-type::first-letter {
+            font-size: 2.2rem;
+            font-weight: 350;
+            color: #7d6b55;
+            float: left;
+            margin-right: 0.3em;
+            line-height: 1;
+        }
+
+        .emphasis-link {
+            color: #8a6f4b;
+            text-decoration: none;
+            border-bottom: 1px solid #c9b69a;
+            transition: color 0.2s, border-color 0.2s;
+        }
+
+        .emphasis-link:hover {
+            color: #4f3d28;
+            border-bottom-color: #4f3d28;
+        }
+
+        blockquote {
+            margin: 2.2rem 0 2.5rem 0.5rem;
+            padding: 1.2rem 1.5rem 1.2rem 1.8rem;
+            background: #eae5db;
+            border-left: 4px solid #b59b7e;
+            border-radius: 0 6px 6px 0;
+            color: #2f2a24;
+            font-style: normal;
+        }
+
+        blockquote p {
+            margin-bottom: 0.6rem;
+            text-indent: 0;
+        }
+
+        blockquote p:last-child {
+            margin-bottom: 0;
+        }
+
+        blockquote .ref {
+            display: block;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: #6b5f4f;
+        }
+
+        .scene-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin: 2.5rem 0 2rem;
+        }
+
+        .scene-card {
+            background: #f0ece4;
+            padding: 1.3rem 1.2rem;
+            border-radius: 10px;
+            border: 1px solid #dcd3c6;
+            transition: background 0.2s;
+        }
+
+        .scene-card:hover {
+            background: #e9e1d4;
+        }
+
+        .scene-card .title {
+            font-weight: 500;
+            font-size: 1rem;
+            color: #3a332b;
+            margin-bottom: 0.3rem;
+        }
+
+        .scene-card .desc {
+            font-size: 0.92rem;
+            color: #5f5548;
+            line-height: 1.5;
+        }
+
+        .closing-note {
+            margin-top: 3rem;
+            padding: 1.8rem 1.5rem;
+            background: #eae4d9;
+            border-radius: 12px;
+            border: 1px solid #d6ccbb;
+        }
+
+        .closing-note p {
+            text-indent: 0;
+            margin-bottom: 0.8rem;
+        }
+
+        .closing-note p:last-child {
+            margin-bottom: 0;
+        }
+
+        .closing-note .small {
+            font-size: 0.85rem;
+            color: #736759;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #d6cdbe;
+            margin: 2.8rem 0 2rem;
+        }
+
+        @media (max-width: 640px) {
+            .hero {
+                padding: 4rem 1.5rem 3.5rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 2rem 1.2rem 3rem;
+            }
+
+            .scene-grid {
+                grid-template-columns: 1fr;
+                gap: 0.9rem;
+            }
+
+            blockquote {
+                margin-left: 0;
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <h1>查询·对照·延伸</h1>
+        <div class="subhead">从一条笔记开始，慢慢搭建理解的锚点</div>
+    </section>
+
+    <div class="container">
+        <div class="article-meta">
+            <span>📂 阅读札记 · 日常检索</span>
+            <span class="tag">信息素养</span>
+            <span>2025 · 冬</span>
+        </div>
+
+        <div class="content">
+
+            <p>
+                日常中有很多零散的疑问——某个词的确切用法、一个平台的背景、一篇报道里提到的名字。信息越拥挤，越需要一块安静的对照区。不是要一次弄懂所有，而是把相关的内容并排放好，留给自己慢慢看。
+            </p>
+
+            <p>
+                比如前阵子翻到一组关于线上资源排布的讨论，里面反复提到“开云”这个名称。起初只是随手记下，后来发现它在不同的语境里反复出现：有人用它指一个聚合性的信息站点，也有人把它当作一个检索的起点。顺着这些线索去翻看，<a href="https://cn-site-kaaiyun.com" class="emphasis-link">开云</a>本身并不强调自己的定位，更像一个安静的枢纽——把分散的条目、分类和索引整合在一起，供人按需取用。
+            </p>
+
+            <p>
+                这种非侵入式的整理方式，恰恰是日常查询中最需要的东西。不需要记住每一个入口，只需要知道在哪里可以顺着线索走下去。对照、筛选、核实，信息素养的养成往往就靠这些反复的参照和交叉验证。比起一次性给出结论，我更倾向于把相关材料摊开在桌面上，然后给自己一点时间。
+            </p>
+
+            <blockquote>
+                <p>“检索不是终点，而是让问题变得更清晰的过程。”</p>
+                <span class="ref">——摘自某篇关于信息整理的笔记，作者不详</span>
+            </blockquote>
+
+            <p>
+                这种习惯延伸出去，就变成了一种阅读节奏。先大致扫一遍结构，然后带着疑问去细读某个段落，再跳出来对比其他条目。不追求速度，而是让每个词都落在它该在的位置。就像整理一张书桌，不需要所有东西都收进抽屉，但需要知道哪些东西经常要用，哪些只需要偶尔翻一翻。
+            </p>
+
+            <p>
+                下面是我自己常遇到的几个使用场景，谈不上推荐，只是记录一种自然发生的使用方式。
+            </p>
+
+            <div class="scene-grid">
+                <div class="scene-card">
+                    <div class="title">🔍 交叉核实</div>
+                    <div class="desc">看到一条新信息时，不急着采信，先找两到三个来源对照。开云里的分类索引适合做初步的线索梳理。</div>
+                </div>
+                <div class="scene-card">
+                    <div class="title">📎 延伸跳转</div>
+                    <div class="desc">从某一篇文章的引用出发，顺藤摸瓜找到原始出处或相关讨论。这种延伸往往带来意想不到的发现。</div>
+                </div>
+                <div class="scene-card">
+                    <div class="title">📖 主题归档</div>
+                    <div class="desc">为长期关注的话题建立一个轻量档案，把零散的链接和笔记归拢到一起，方便后续回看。</div>
+                </div>
+                <div class="scene-card">
+                    <div class="title">🧩 概念对照</div>
+                    <div class="desc">当两个相似术语容易混淆时，把它们并列摆出来，逐条对比定义和上下文，比单独记忆更有效。</div>
+                </div>
+            </div>
+
+            <p>
+                这些场景听起来都很普通，但正是这些普通的动作构成了日常的认知边界。好的工具不是让你变得更忙，而是让你在需要的时候，可以安静地停下来，把问题看清楚。
+            </p>
+
+            <p>
+                说到底，无论是网站还是笔记，都只是媒介。真正重要的是使用者的态度——保持好奇，保持审慎，允许自己花时间去理解。就像你在读这篇文章的时候，也许某个词或某个链接让你停了下来，那就是延伸的开始。
+            </p>
+
+        </div>
+
+        <hr>
+
+        <div class="closing-note">
+            <p><strong>延伸阅读提示</strong></p>
+            <p>
+                如果你恰好也在梳理某个领域的条目，或者需要一处安静的对照空间，不妨看看<a href="https://cn-site-kaaiyun.com" class="emphasis-link">开云</a>——它不会告诉你标准答案，但可能会帮你把问题摆得更整齐一些。
+            </p>
+            <p class="small">
+                本文属于个人阅读笔记，不构成任何引导或保证。所有信息请以原始出处为准。
+            </p>
+        </div>
+
+    </div>
+
+</body>
+</html>
